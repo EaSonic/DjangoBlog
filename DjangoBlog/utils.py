@@ -195,7 +195,7 @@ def get_blog_setting():
         from blog.models import BlogSettings
         if not BlogSettings.objects.count():
             setting = BlogSettings()
-            setting.sitename = 'Eason Iris Logan'
+            setting.sitename = 'Eason Iris Logan | Eat Pray Love'
             setting.site_description = '基于Django的博客系统'
             setting.site_seo_description = '基于Django的博客系统'
             setting.site_keywords = 'Django,Python'
