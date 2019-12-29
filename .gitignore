@@ -76,5 +76,4 @@ werobot_session
 django.jpg
 uploads/
 settings_production.py
-settings.py
 werobot_session.db
