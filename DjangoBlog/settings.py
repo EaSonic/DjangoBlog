@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'oauth',
     'servermanager',
     'owntracks',
-    'compressor'
+    'compressor',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
-    'blog.middleware.OnlineMiddleware'
+    'blog.middleware.OnlineMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'DjangoBlog.urls'
@@ -287,3 +289,5 @@ COMPRESS_JS_FILTERS = [
 
 MEDIA_ROOT = os.path.join(SITE_ROOT, 'uploads')
 MEDIA_URL = '/media/'
+
+INTERNAL_IPS = ['127.0.0.1']

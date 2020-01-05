@@ -1,0 +1,9 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+      ],
+    "python.pythonPath": "/Users/eason/anaconda3/envs/EaBlog/bin/python"
+}
