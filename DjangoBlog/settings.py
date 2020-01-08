@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'servermanager',
     'owntracks',
     'compressor',
+    'bootstrap4',
     'debug_toolbar'
 ]
 

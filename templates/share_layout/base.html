@@ -13,7 +13,7 @@
 <!--<![endif]-->
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width"/>
     {% block header %}
     {% endblock %}
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
@@ -38,91 +38,18 @@
         <![endif]-->
         <link rel="stylesheet" href="{% static 'pygments/default.css' %}"/>
         <link rel="stylesheet" href="{% static 'blog/css/nprogress.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'blog/css/index.css' %}">
         {% block compress_css %}
         {% endblock %}
     {% endcompress %}
 </head>
 
-<!--body class="home blog custom-font-enabled"-->
-<body>
-
-<!-- 图片轮播 -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-
-    <!-- 内容 -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="{% static 'blog/img/Cycle.png' %}">
-            <p class="carousel-caption">
-                Cycle
-            </p>
-        </div>
-        <div class="item">
-            <img src="{% static 'blog/img/Tech.jpg' %}">
-            <p class="carousel-caption">
-                Tech
-            </p>
-        </div>
-        <div class="item">
-            <img src="{% static 'blog/img/Life.jpg' %}">
-            <p class="carousel-caption">
-                Life
-            </p>
-        </div>
-    </div>
-
-    <!-- 切换按钮 -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<!-- Main tags -->
-<div class="row div_function">
-    <div class="col-xs-4">
-        <div class="panel panel-default" id="pFunc1">
-            <div class="panel-body">
-                <strong>周期</strong>
-                <img class="iv_function" src={% static 'blog/img/Cycle.svg' %}>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-4">
-        <div class="panel panel-default"  id="pFunc2">
-            <div class="panel-body">
-                <strong>技术</strong>
-                <img class="iv_function" src={% static 'blog/img/Tech.svg' %}>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-4">
-        <div class="panel panel-default"  id="pFunc3">
-            <div class="panel-body">
-                <strong>生活</strong>
-                <img class="iv_function" src={% static 'blog/img/Life.svg' %}>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="page" class="row">
-    <header id="masthead" class="col-xs-9" role="banner">
+<body class="home blog custom-font-enabled">
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header" role="banner">
         <hgroup>
-            <hr class="hr_1"><a href="{{ SITE_BASE_URL }}" title="{{ SITE_NAME }}" rel="home">{{ SITE_NAME }}</a></hr>
-            <!--h2 class="list-group-item-heading">{{ SITE_DESCRIPTION }}</h2-->
+            <h1 class="site-title"><a href="{{ SITE_BASE_URL }}" title="{{ SITE_NAME }}" rel="home">{{ SITE_NAME }}</a>
+            </h1>
+            <h2 class="site-description">{{ SITE_DESCRIPTION }}</h2>
         </hgroup>
 
         {% cache 36000 nav %}
@@ -130,7 +57,6 @@
         {% endcache %}
 
     </header><!-- #masthead -->
-
     <div id="main" class="wrapper">
 
         {% block content %}
@@ -146,14 +72,12 @@
 </div><!-- #page -->
 
 </body>
-
 <footer>
     {% compress js %}
         <script type="text/javascript" src="{% static 'blog/js/jquery-3.1.1.js' %}"></script>
         <script type="text/javascript" src="{% static 'blog/js/nprogress.js' %}"></script>
         <script src="{% static 'blog/js/blog.js' %}" type="application/javascript"></script>
         <script src="{% static 'blog/js/navigation.js' %}" type="application/javascript"></script>
-        <script src="{% static 'assets/js/bootstrap.js' %}" type="application/javascript"></script>
         {% block compress_js %}
         {% endblock %}
     {% endcompress %}
